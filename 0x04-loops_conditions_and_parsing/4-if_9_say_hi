@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#print best school if 9 say hi
 i=0
 while [ $i -lt "10" ]; do
 	echo "Best School"
