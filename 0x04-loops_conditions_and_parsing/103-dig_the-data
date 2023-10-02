@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# parse apache log file with format
+./102-lets_parse_apache_logs | sort | uniq -c | sort -nr
