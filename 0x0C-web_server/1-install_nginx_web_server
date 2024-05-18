@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Script to set up nginx on a server
+
+# Update app list
+sudo apt-get update
+
+# Install nginx
+sudo apt-get -y install nginx
+
+# Adjust firewall
+sudo ufw allow 'Nginx HTTP'
+
+# Restart nginx without using systemctl
+sudo kill -s HUP $(cat /var/run/nginx.pid)
+
+# Return a page that contains the string Hello World!
+echo "<html><body>Hello World!</body></html>" > /var/www/html/index.html
