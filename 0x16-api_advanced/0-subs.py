@@ -15,6 +15,8 @@ def number_of_subscribers(subreddit):
     If not a valid subreddit, return 0.
     Invalid subreddits may return a redirect to search results.
     """
+    if subreddit is None or not isinstance(subreddit, str):
+        return 0
     request = requests.get(
         "https://www.reddit.com/r/{}/about.json".format(subreddit),
         headers={"User-Agent": "Custom"},
