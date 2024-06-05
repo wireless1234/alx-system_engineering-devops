@@ -17,6 +17,7 @@ def top_ten(subreddit):
         "https://www.reddit.com/r/{}/hot.json".format(subreddit),
         headers={"User-Agent": "Custom"},
         params={"limit": 10},
+        allow_redirects=False,
     )
 
     if request.status_code == 200:
